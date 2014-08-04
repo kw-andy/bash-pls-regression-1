@@ -1,0 +1,41 @@
+#!/bin/bash
+
+export datenow=$(date +%Y%m%d)
+
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsbu_m_r2.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsci_m_r2.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsco_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsfs_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsin_m_r2.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsrt_m_r2.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bsse_m_r2.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_bssi_m_r2.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_cphi_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_isbr_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_isbu_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_isin_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_isir_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_isrt_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_lmhr_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_lmhu_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_mfir_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/ei_mfrt_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/irt_euryld_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/irt_lt_mcby_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/irt_st_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_cann.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_cind.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_cmon.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_manr.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_midx.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_midx96.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_mmor.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/prc_hicp_mv12r.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_cobp_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_cobpgr_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_inpi_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_inpp_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_inppd_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_inppnd_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_trtu_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
+#mv /cygdrive/c/travail/etudes/projetpib/donnees/sts_trtugr_m.tsv /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/$datenow
