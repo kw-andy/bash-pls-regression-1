@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#traitem1euro_v13.sh
+#traitem1euro_v12.sh
 #le fichier traite les fichiers téléchargés sur Eurostat
 #se mettre dans le repertoire  /cygdrive/c/travail/etudes/projetpib/donnees
 
@@ -10,13 +10,10 @@
 #traitem1trim_v2.sh
 #fic_trime.sh
 #split_fic.sh
-#trans.sh
-
-# librairie nécessaire : python
 
 #
-##on declare les variables
-set -x
+#on declare les variables
+
 export LC_ALL=C
 export datenow=$(date +%Y%m%d)
 
@@ -38,7 +35,7 @@ mv $file "$dir/`echo $file | cut -c85-`"; done
 
 #creation des répertoires pour le mois
 
-mkdir "/cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/mens_inac/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/trim/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/dico1" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/dico2" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/dico3" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/dico4"
+mkdir "/cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/mens_inac/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/trim/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/dico"
 
 #execution des fichiers pour déplacer les fichiers dans leur répertoire respectif
 
@@ -62,6 +59,7 @@ for file in /cygdrive/c/travail/etudes/projetpib/donnees/*/"${datenow}"/*.tsv; d
     filename=${file##*/}
     sed -i '2,$s/0n//g' $file
 done
+
 
 
 #On transpose les fichiers avec le fichier trans.sh
@@ -132,9 +130,8 @@ rm /cygdrive/c/travail/etudes/projetpib/donnees/trim/"$datenow"/*v1.tsv
 #copie du script
 cp "/cygdrive/c/travail/etudes/projetpib/donnees/trim/fic_trime.sh" "/cygdrive/c/travail/etudes/projetpib/donnees/trim/$datenow"
 
-Execution du script ou on ajoute des lignes pour avoir des mois
-par rapport a ces fichiers qui sont trimestriels
-
+#Execution du script ou on ajoute des lignes pour avoir des mois
+#par rapport a ces fichiers qui sont trimestriels
 "/cygdrive/c/travail/etudes/projetpib/donnees/trim/$datenow/fic_trime.sh"
 
 
@@ -147,7 +144,6 @@ for file in /cygdrive/c/travail/etudes/projetpib/donnees/mens_actu/"${datenow}"/
 	dir=${file%/*}
 	cp "${file}" "${file%.*}v$i.${file##*.}"
 	mv "$file" "$dir/fic${i}.csv"
-	echo "$file" "$dir/fic${i}.csv" >> "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/corresp$datenow.txt"
 	((i++))
 done 
 
@@ -156,7 +152,6 @@ for file in /cygdrive/c/travail/etudes/projetpib/donnees/mens_inac/"${datenow}"/
 	dir=${file%/*}
 	cp "${file}" "${file%.*}v$i.${file##*.}"
 	mv "$file" "$dir/fic${i}.csv"
-	echo "$file" "$dir/fic${i}.csv" >> "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/corresp$datenow.txt"
 	((i++))
 done 
 
@@ -165,7 +160,6 @@ for file in /cygdrive/c/travail/etudes/projetpib/donnees/trim/"${datenow}"/OK/*.
 	dir=${file%/*}
 	cp "${file}" "${file%.*}v$i.${file##*.}"
 	mv "$file" "$dir/fic${i}.csv"
-	echo "$file" "$dir/fic${i}.csv" >> "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/corresp$datenow.txt"
 	((i++))
 done 
 
@@ -223,24 +217,15 @@ for file in /cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${dateno
     [ -e "${file}" ] || continue
 	dir=${file%/*}
 	mv "$file" "$dir/fich${i}.csv"
-	echo "$file" "$dir/fich${i}.csv" >> "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
 	((i++))
 done 
-
-#on supprime les noms des répertoires. Cela aurait pu être fait plutot mais 
-#manque de temps donc : )
-
-sed -i "s/\/cygdrive\/c\/travail\/etudes\/projetpib\/donnees\/fichiersfinaux\/$datenow\///g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
-
-sed -i "s/\/cygdrive\/c\/travail\/etudes\/projetpib\/donnees\/mens_actu\/$datenow\///g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/corresp$datenow.txt"
-
-sed -i "s/\/cygdrive\/c\/travail\/etudes\/projetpib\/donnees\/mens_inac\/$datenow\///g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/corresp$datenow.txt" 
-
-sed -i "s/\/cygdrive\/c\/travail\/etudes\/projetpib\/donnees\/trim\/$datenow\/OK\///g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/corresp$datenow.txt"
-
-sed -i "s/v0//g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
-sed -i "s/v1//g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
-sed -i "s/v2//g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
-sed -i "s/v3//g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
-sed -i "s/v4//g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
-sed -i "s/v5//g" "/cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/nllecorresp$datenow.txt"
+	
+# rm fich88.csv
+# 
+# i=1
+# for file in /cygdrive/c/travail/etudes/projetpib/donnees/fichiersfinaux/${datenow}/*.csv; do
+#     [ -e "${file}" ] || continue
+# 	dir=${file%/*}
+# 	mv "$file" "$dir/fich${i}.csv"
+# 	((i++))
+# done 
