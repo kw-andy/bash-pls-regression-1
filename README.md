@@ -1,4 +1,3 @@
-## repertoire pour du shell-scripts fait en awk et sed
+# shell scripts I've created, mostly using *awk* and *sed*
 
-principalement pour voir ce que j'ai fais
 
